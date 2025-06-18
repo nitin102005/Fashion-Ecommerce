@@ -7,7 +7,7 @@ import Lottie from 'lottie-react';
 import Btn from "../assets/Btn.json";
 import { Link } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import { getFilteredProducts } from '../utils/filterProducts';
 import getDisplayTitle from '../utils/getDisplayTitle';
 
