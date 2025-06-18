@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import '../App.css'
 import '../index.css'
-import Navbar from './navbar'
+import Navbar from './Navbar'
 import model2 from '../assets/model2.png'
 import model4 from '../assets/model4.jpg'
 // import poster1 from '../assets/poster1.png'
