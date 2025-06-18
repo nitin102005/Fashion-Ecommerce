@@ -11,7 +11,7 @@ import poster2 from '../assets/poster2.png'
 import poster3 from '../assets/poster3.png'
 import poster4 from '../assets/poster4.png'
 import poster5 from '../assets/poster5.png'
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import Lottie from 'lottie-react';
 import Btn from "../assets/Btn.json"
 // import Add from './Add';
