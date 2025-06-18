@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Marcellus&family=Mona+Sans:ital,wdth,wght@0,87.5,200..900;1,87.5,200..900&display=swap');
+@import "tailwindcss";
+@tailwind utilities;
+@layer utilities {
+  .clip-custom-v {
+    clip-path: polygon(100% 78%, 82% 100%, 18% 100%, 0 78%);
+    
+  }
+  .texts {
+    @apply mt-2 text-black relative;
+    top: 93px;
+  }
+}
+
+.marcellus-regular {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.mona-sans{
+  font-family: "Mona Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 87.5;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+  
+ @theme {
+  --font-sans: "Mona Sans", sans-serif; 
+  --font-sans: "Marcellus", sans-serif; 
+
+ }
+ html {
+  scroll-behavior: smooth;
+}
