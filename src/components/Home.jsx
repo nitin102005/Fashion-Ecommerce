@@ -2,13 +2,8 @@ import React, { useContext } from 'react'
 import '../App.css'
 import '../index.css'
 import Navbar from './Navbar'
-import model2 from '../assets/model2.png'
-import model4 from '../assets/model4.jpg'
-// import poster1 from '../assets/poster1.png'
-// import poster2 from '../assets/poster2.png'
-// import poster3 from '../assets/poster3.png'
-// import poster4 from '../assets/poster4.png'
-// import poster5 from '../assets/poster5.png'
+import model12 from '../assets/model12.png'
+import model14 from '../assets/model14.jpg'
 import { ProductContext } from '../context/ProductContext'
 import Product from './Product'
 import "slick-carousel/slick/slick.css";
@@ -81,41 +76,96 @@ const Home = () => {
 
   return (
 
-    <div id='homenav' className='bg-slate-300 p-8 h-[600vh]'>
-      <div className='bg-white rounded-2xl p-7 pl-8 pr-8 h-[vh]' style={{ boxShadow: '0 0 12px 0 rgba(0, 0, 0, 0.3)' }}>
-        <div className='bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] rounded-2xl p-4 pl-8 pr-8 h-[585vh]'>
+    <div id='homenav' className='bg-slate-300 lg:p-8 h-full'>
+      <div className='bg-white rounded-2xl p-4 sm:p-19 md:p-6 lg:p-7 ' style={{ boxShadow: '0 0 12px 0 rgba(0, 0, 0, 0.3)' }}>
+        {/* <div className='bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] rounded-2xl p-4 pl-8 pr-8 h-[585vh]'> */}
+        <div className="bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] sm:pl-1.5 sm:pr-1.5 rounded-2xl p-6 lg:pl-12 lg:pr-12 min-h-screen">
+
           <Navbar />
-          <div className='h-[70vh] w-[1286px] bg-white backdrop-blur-2xl mt-6 rounded-2xl flex items-start justify-end ml-4 overflow-hidden' style={{ boxShadow: '0 0 12px 0 rgba(0, 0, 0, 0.2)' }}>
-            <img src={model4} alt="men Fashion" className='h-[98vh] relative bottom-7 left-98' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
-            <h1 className='bg-[#000000e4]  text-white text-[58px] p-2 relative top-10 left-83 whitespace-pre rounded-[9px] text-center '> Elevate Your Fits <br/> Define Your Vibe.. </h1>
-            <p className='relative right-20 top-60 text-[20px] whitespace-nowrap' >Where minimal meets meaningful.</p>
-            <div className='absolute h-[40vh] w-[290px] left-[470px] top-[295px] mx-auto z-50'>
+          <div className='min-h-[170px] sm:min-h-[508px]  bg-white backdrop-blur-2xl mt-6 rounded-2xl pl-0 pr-0 flex overflow-hidden gap-6 items-center' style={{ boxShadow: '0 0 12px 0 rgba(0, 0, 0, 0.2)' }}>
 
-              <Slider {...settingsposter}>
-                <div>
-                  <h3 className='text-[18px] bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-4 rounded-2xl text-sm font-medium Mona-Sans'>“Style is a way to say who you are without speaking.” <br /> – Rachel Zoe</h3>
-                </div>
-                <div>
-                  <h3 className='text-[18px] bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-4 rounded-2xl text-sm font-medium Mona-Sans'>“Minimal isn’t basic — it’s bold.” <br /> – Barefit Philosophy</h3>
-                </div>
-                <div>
-                  <h3 className='text-[18px] bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-4 rounded-2xl text-sm font-medium Mona-Sans'>“Dress how you want to be remembered.” <br />– Anonymous</h3>
-                </div>
-                <div>
-                  <h3 className='text-[18px] bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-4 rounded-2xl text-sm font-medium Mona-Sans'>“Confidence is the best outfit. Rock it and own it.” <br /> – Unknown</h3>
-                </div>
-                <div>
-                  <h3 className='text-[18px] bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-4 rounded-2xl text-sm font-medium Mona-Sans'>“In a world full of trends, remain timeless.”<br /> – Imaan Hammam</h3>
-                </div>
+            {/* image  */}
+            <div className='p-0 invisible sm:visible'>
 
-              </Slider>
-              <button className='bg-black text-white w-[170px] h-10 text-2xl left-[58px] absolute bottom-[100px] cursor-pointer rounded-2xl' onClick={()=>{
-            document.getElementById("trendnav")?.scrollIntoView({behavior: "smooth"})
-          }}>Explore Now</button>
+              <img src={model14} alt="men Fashion" className='max-h-[105vh] sm:max-h-[90vh] z-50 mt-7 mr-3 object-contain' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
+            </div>
+            {/* Phone  */}
+            <div className='p-0 sm:hidden '>
+
+              <img src={model14} alt="men Fashion" className='h-[17vh] object-cover absolute  top-7 left-[-6px]' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
+            </div>
+            {/* wrting section  */}
+            <div className='max-h-[60vh] max-w-[30vw] flex flex-col justify-center items-center '>
+              <div className='hidden sm:block'>
+                <h1 className='bg-[#000000e4] text-white text-[17px] leading-tight sm:text-[58px] sm:leading-snug p-2 whitespace-pre rounded-[9px] text-center'> Elevate Your Fits  <br />Define Your Vibe..</h1>
+
+
+                <p className='text-center text-[14px] sm:text-[20px] whitespace-nowrap mt-3'>
+                  Where minimal meets meaningful.
+                </p>
+              </div>
+              {/* For Phones  */}
+              <div className=' sm:hidden w-[34vw] z-30 overflow-hidden mb-16 ml-2'>
+                <h1 className='bg-[#000000e4] text-white text-[14px] p-1 rounded-[9px] text-center'> Elevate Your Fits  <br />Define Your Vibe..</h1>
+
+
+                <p className='text-center text-[8px] whitespace-nowrap mt-1'>
+                  Where minimal meets meaningful.
+                </p>
+              </div>
+
+
+              {/* slider  */}
+              <div className='w-[200px] sm:w-[490px] sm:max-w-2xl hidden sm:block px-2 py-4 sm:px-4 sm:py-4 h-auto'>
+                <Slider {...settingsposter}>
+                  {[
+                    "“Style is a way to say who you are without speaking.” – Rachel Zoe",
+                    "“Minimal isn’t basic — it’s bold.” – Barefit Philosophy",
+                    "“Dress how you want to be remembered.” – Anonymous",
+                    "“Confidence is the best outfit. Rock it and own it.” – Unknown",
+                    "“In a world full of trends, remain timeless.” – Imaan Hammam",
+                  ].map((quote, i) => (
+                    <div key={i} className="px-2">
+                      <h3 className='bg-gradient-to-b from-[#C4E1E6] to-[#eaf1f5] p-3 sm:p-4 rounded-2xl text-[10px] sm:text-[16px] lg:text-[18px] Mona-Sans '>
+                        {quote.split("–")[0]} <br />
+                        <span className='font-semibold'>– {quote.split("–")[1]}</span>
+                      </h3>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+
+              <div className='mt-2'>
+                <button
+                  className='bg-black text-white hidden sm:block text-sm p-2 mt-1 cursor-pointer rounded-xl transition-all duration-200 hover:bg-gray-800'
+                  onClick={() => {
+                    document.getElementById("trendnav")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Explore Now
+                </button>
+
+                {/* phones  */}
+                <button
+                  className='bg-black text-white sm:hidden text-[8px] p-1 mt-1 absolute bottom-14 right-32 cursor-pointer transition-all duration-200 hover:bg-gray-800'
+                  onClick={() => {
+                    document.getElementById("trendnav")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Explore Now
+                </button>
+              </div>
+
             </div>
 
-            <img src={model2} alt="men Fashion" className='h-[88vh] relative bottom-15' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
-
+            {/* image  */}
+            <div className='p-0 invisible sm:visible'>
+              <img src={model12} alt="men Fashion" className='max-h-[95vh] sm:max-h-[88vh] ml-3.5 mt-10' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
+            </div>
+            {/* phone  */}
+            <div className='p-0 sm:hidden'>
+              <img src={model12} alt="men Fashion" className='h-[16vh] object-cover absolute  top-9 right-[-6px]' style={{ filter: "drop-shadow(0 0 12px 0)" }} />
+            </div>
 
           </div>
 
