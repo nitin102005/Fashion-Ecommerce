@@ -32,35 +32,35 @@ const Home = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4, // default for large screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // below 1024px (tablets)
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-        }
+        },
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // below 768px (mobile landscape)
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
       {
-        breakpoint: 480,
+        breakpoint: 480, // below 480px (mobile portrait)
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-
-        }
-      }
-    ]
+          slidesToShow: 2,  // changed from 1 to 2
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+  
 
   //Get products from context
   const { products } = useContext(ProductContext)
@@ -170,8 +170,9 @@ const Home = () => {
           </div>
 
           {/* TRENDING SECTION */}
-          <div className='mx-4 '>
-            <h1 id='trendnav' className='text-[25px] p-3 mt-5'>TRENDING</h1>
+          <h1 className='text-sm sm:text-[25px] p-0 sm:p-5 mt-3 sm:mt-3'>TRENDING</h1>
+<div className='p-0 sm:p-4 rounded-2xl'>
+
             <div className='p-5 rounded-2xl '>
               <Slider {...settings}>
                 {filteredProducts.map((product) => {
@@ -187,6 +188,6 @@ const Home = () => {
 
     </div>
   )
-}
+} 
 
 export default Home
