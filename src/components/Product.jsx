@@ -25,7 +25,7 @@ const Product = ({product}) => {
     displayTitle = "Women's Ski Coat";
   }
   else if (id === 18) {
-    displayTitle = "Women's Boat Neck Tee";
+    displayTitle = "Women's Boat Neck";
   }
   else if (id === 1) {
     displayTitle = "SACK Laptop Backpack";
