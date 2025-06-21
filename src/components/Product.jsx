@@ -55,7 +55,7 @@ const Product = ({product}) => {
       <div className='h-[35vh] sm:h-[60vh] hidden sm:block w-[20vw] rounded-[10px] overflow-hidden bg-white '>
         <div className='p-1 sm:p-5 bg-white rounded-2xl flex items-center justify-center ' >
         <Link to={`/product/${id}`}>
-          <FaEye className="text-2xl cursor-pointer z-50 hover:text-blue-600 transition-colors duration-300" />
+          <FaEye className="text-2xl cursor-pointer hidden sm:block absolute top-3 z-50 opacity-0 group-hover:opacity-90 transition-colors duration-300" />
         </Link>
             <img className='rounded-2xl p-10 h-[17vh] sm:h-[39vh] group-hover:scale-110 transition duration-300 border border-[#e4e4e4]' src={image} alt="" />
         </div>
@@ -63,13 +63,14 @@ const Product = ({product}) => {
             <div className='' >{displayTitle}</div>
             <div className='bg-black rounded-2xl text-white p-2 h-[36px] ml-8'>₹{Math.round(price * 83)}</div>
         </div>
-        <div className='h-[46px] w-[190px] overflow-hidden rounded-4xl ml-13 relative bottom-[35px]'>
+        <div className='h-[46px] w-[190px] hidden sm:block overflow-hidden rounded-4xl ml-13 relative bottom-[35px]'>
         <button className='relative object-cover scale-[1.9] bottom-[20px] p-[0px] cursor-pointer' onClick={handleClick}>
       <Lottie
       loop={false}
       autoplay={false}
       lottieRef={lottieRef}
-      animationData={Btn}/></button>
+      animationData={Btn}/>
+      </button>
           
           
         </div>
@@ -92,7 +93,7 @@ const Product = ({product}) => {
       <Lottie
       loop={false}
       autoplay={false}
-      lottieRef={lottieRef}
+
       animationData={Btn}/></button>
           
           
