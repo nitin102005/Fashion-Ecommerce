@@ -170,7 +170,7 @@ const Home = () => {
           </div>
 
           {/* TRENDING SECTION */}
-          <h1 className='text-sm sm:text-[25px] p-0 sm:p-5 mt-3 sm:mt-3'>TRENDING</h1>
+          <h1 id='trendnav' className='text-sm sm:text-[25px] p-0 sm:p-5 mt-3 sm:mt-3'>TRENDING</h1>
 <div className='p-0 sm:p-4 rounded-2xl'>
 
             <div className='p-5 rounded-2xl '>
