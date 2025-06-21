@@ -1,108 +1,171 @@
-import React,{useContext,useRef} from 'react'
-import { CartContext } from '../context/CartContext';
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import Lottie from 'lottie-react';
-import Btn from "../assets/Btn.json"
-import { FaEye } from "react-icons/fa";  
+import Product from './Product';
+import { ProductContext } from '../context/ProductContext';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ShoeSection from './ShoeSection';
+import poster1 from '../assets/poster1.png'
+import poster2 from '../assets/poster2.png'
+import poster3 from '../assets/poster3.png'
+import poster4 from '../assets/poster4.png'
+import poster5 from '../assets/poster5.png'
 
-const Product = ({product}) => {
-  const lottieRef = useRef();
-  const handleClick = () => {
-    // Play the animation once on click
-    lottieRef.current?.goToAndPlay(0, true);
-    addToCart(product);
+// import Add from './Add';
+
+function Section() {
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2.13,
+          slidesToScroll: 1
+
+        }
+      }
+    ]
   };
 
-    // console.log(product)
-    const {id, image ,category, title, price} = product;
-    const { addToCart } = useContext(CartContext); 
-    let displayTitle = title;
-  if (id === 16) {
-    displayTitle = "Hooded Jacket";
-  } else if (id === 17) {
-    displayTitle = "Raincoat for Women";
-  }else if (id === 15) {
-    displayTitle = "Women's Ski Coat";
-  }
-  else if (id === 18) {
-    displayTitle = "Women's Boat Neck";
-  }
-  else if (id === 1) {
-    displayTitle = "SACK Laptop Backpack";
-  }
-  else if (id === 20) {
-    displayTitle = "DANV Short Sleeve Tee";
-  }
-  else if (id === 19) {
-    displayTitle = "Opna Short Sleeve T-Shirt";
-  }
-  else if (id === 2) {
-    displayTitle = "Men Casual T-Shirt";
-  }
-  else if (id === 8) {
-    displayTitle = "Pierced Owl Rose Gold Studs";
-  }
-  else if (id === 5) {
-    displayTitle = "Women's Bracelet";
-  }
-  else if (id === 6) {
-    displayTitle = "Silver Petite Ring";
-  }
+  // Get products from context
+  const { products } = useContext(ProductContext);
+
+  const menProducts = products.filter(item => {
+    return item.category === "men's clothing"
+  })
+  const womenProducts = products.filter(item => {
+    return item.category === "women's clothing"
+  })
+  const AccesoriesProducts = products.filter(item => {
+    return item.category === "jewelery"
+  })
+
   return (
+
     <>
-    
-    <div className='px-0 mx-1 sm:mx-0 sm:px-0'>
-      <div className='h-[35vh] sm:h-[60vh] hidden sm:block w-[20vw] group rounded-[10px] overflow-hidden bg-white '>
-        <div className='p-1 sm:p-5 bg-white rounded-2xl flex items-center justify-center ' >
-        <Link to={`/product/${id}`}>
-          <FaEye className="text-2xl cursor-pointer hidden sm:block absolute top-3 z-50 opacity-0 group-hover:opacity-90 transition-colors duration-300" />
-        </Link>
-            <img className='rounded-2xl p-10 h-[17vh] sm:h-[39vh] group-hover:scale-110 transition duration-300 border border-[#e4e4e4]' src={image} alt="" />
-        </div>
-        <div className='p-10 pt-0 flex row space-x-7'>
-            <div className='' >{displayTitle}</div>
-            <div className='bg-black rounded-2xl text-white p-2 h-[36px] ml-8'>₹{Math.round(price * 83)}</div>
-        </div>
-        <div className='h-[46px] w-[190px] hidden sm:block overflow-hidden rounded-4xl ml-13 relative bottom-[35px]'>
-        <button className='relative object-cover scale-[1.9] bottom-[20px] p-[0px] cursor-pointer' onClick={handleClick}>
-      <Lottie
-      loop={false}
-      autoplay={false}
-      lottieRef={lottieRef}
-      animationData={Btn}/>
-      </button>
-          
-          
+      {/* // MENS SECTION */}
+      <div className='mx-4 '>
+        <h1 id='mennav' className='relative right-4 p-3 text-[25px] sm:p-5 mt-3 sm:mt-3'>MEN'S COLLECTION</h1>
+        <div className='p-5 rounded-2xl'>
+
+          <Slider {...settings}>
+            {menProducts.map((product) => {
+              return <Product product={product} key={product.id} />
+            })}
+
+          </Slider>
         </div>
       </div>
 
-      {/* Phone  */}
-      <div className='h-[35vh] sm:hidden w-[38vw] rounded-[10px] flex flex-col items-center overflow-hidden p-3 bg-white '>
-        <div className='p-1 bg-white rounded-2xl h-[17vh] flex items-center justify-center ' >
-        <Link to={`/product/${id}`}>
-          <FaEye className="text-2xl cursor-pointer absolute top-0 z-50 hover:text-blue-600 transition-colors duration-300" />
-        </Link>
-            <img className='rounded-2xl p-7 group-hover:scale-110 transition duration-300 border border-[#e4e4e4]' src={image} alt="" />
-        </div>
-        <div className=' pt-0 flex absolute bottom-[50px] flex-col'>
-            <div className='bg-black text-white absolute bottom-[64px] left-0 whitespace-pre'> ₹{Math.round(price * 83)} </div>
-            <div className='w-[27vw] p-1 bottom-1 relative flex justify-center items-center' >{displayTitle}</div>
-        </div>
-        <div className='h-[26px] w-[150px] overflow-hidden rounded-4xl relative left-4 top-[92px]'>
-        <button className='relative object-cover scale-[1.5] bottom-[25px] right-[16px] p-[0px] cursor-pointer' onClick={handleClick}>
-      <Lottie
-      loop={false}
-      autoplay={false}
+      {/* // Women SECTION */}
+      <div className='mx-4 '>
+        <h1 id='womennav' className='relative right-3 p-3 text-[25px] sm:p-5 mt-3 sm:mt-3'>WOMEN'S COLLECTION</h1>
+        <div className='p-5 rounded-2xl '>
 
-      animationData={Btn}/></button>
-          
-          
+          <Slider {...settings}>
+            {womenProducts.map((product) => {
+              return <Product product={product} key={product.id} />
+            })}
+
+          </Slider>
         </div>
       </div>
-    </div>
+      {/* // ACCESSORIES */}
+      <div className='mx-4 '>
+        <h1 id='anav' className='text-[25px] relative right-3 p-8 mt-5'>ACCESSORIES</h1>
+        <div className='p-5 rounded-2xl '>
+
+          <Slider {...settings}>
+            {AccesoriesProducts.map((product) => {
+              return <Product product={product} key={product.id} />
+            })}
+
+          </Slider>
+        </div>
+      </div>
+      <ShoeSection />
+
+      <div className='hidden sm:block'>
+        <h1 className='text-[25px] p-8 mt-[-15px]'>SHOP NOW</h1>
+        <div className='mx-4 flex h-[50vh] gap-6'>
+          <img src={poster1} alt="" />
+          <img src={poster2} alt="" />
+          <img src={poster3} alt="" />
+          <img src={poster5} alt="" />
+          <img src={poster4} alt="" />
+        </div>
+
+        {/* <div className='sm:hidden flex h-[11vh] mr-5 gap-1'>
+          <img src={poster1} alt="" />
+          <img src={poster2} alt="" />
+          <img src={poster3} alt="" />
+          <img src={poster5} alt="" />
+          <img src={poster4} alt="" />
+        </div> */}
+         <div className='mx-4 flex gap-4 z-30 pointer-events-auto justify-center'>
+          <button type="button" className='bg-white z-30 pointer-events-auto w-[393px] relative flex items-center justify-center cursor-pointer' onClick={()=>{
+            document.getElementById("mennav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-black text-[#FADADD] flex items-center justify-center  relative left-[13px]  w-[388px] cursor-pointer' onClick={()=>{
+            document.getElementById("womennav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center relative left-[29px] w-[390px] cursor-pointer' onClick={()=>{
+            document.getElementById("anav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#1A1A1A] text-[#ECE6DA] flex items-center justify-center relative left-[40px] w-[389px] cursor-pointer' onClick={()=>{
+            document.getElementById("snav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#3E1F47] text-[#EADCF8] flex items-center justify-center relative left-[58px] w-[383px] cursor-pointer' onClick={()=>{
+            document.getElementById("wnav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+        </div>
+
+        {/* <div className='mx-4 flex sm:hidden gap-4 z-30 pointer-events-auto'>
+          <button type="button" className='bg-white z-30 text-[7px] h-[17px] w-[220vw] right-[10px] justify-center p-0.5 relative flex cursor-pointer' onClick={()=>{
+            document.getElementById("mennav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-black text-[#FADADD] text-[7px] h-[17px] w-[590px] right-[10px] justify-center p-0.5 relative flex  cursor-pointer' onClick={()=>{
+            document.getElementById("womennav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#D4AF37] text-[#1C1C1C] text-[7px] h-[17px] w-[469px] right-[10px] justify-center p-0.5 relative flex  cursor-pointer' onClick={()=>{
+            document.getElementById("anav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#1A1A1A] text-[#ECE6DA] text-[7px] h-[17px] w-[469px] right-[10px] justify-center p-0.5 relative flex  cursor-pointer' onClick={()=>{
+            document.getElementById("snav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+          <button className='bg-[#3E1F47] text-[#EADCF8] text-[7px] h-[17px] w-[469px] right-[10px] justify-center p-0.5 relative flex  cursor-pointer' onClick={()=>{
+            document.getElementById("wnav")?.scrollIntoView({behavior: "smooth"})
+          }}>SHOP NOW</button>
+        </div> */}
+        
+
+      </div>
 
     </>
   )
 }
 
-export default Product
+export default Section
