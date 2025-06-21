@@ -52,7 +52,7 @@ const Product = ({product}) => {
     <>
     
     <div className='px-0 mx-1 sm:mx-0 sm:px-0'>
-      <div className='h-[35vh] sm:h-[60vh] hidden sm:block w-[20vw] rounded-[10px] overflow-hidden bg-white '>
+      <div className='h-[35vh] sm:h-[60vh] hidden sm:block w-[20vw] group rounded-[10px] overflow-hidden bg-white '>
         <div className='p-1 sm:p-5 bg-white rounded-2xl flex items-center justify-center ' >
         <Link to={`/product/${id}`}>
           <FaEye className="text-2xl cursor-pointer hidden sm:block absolute top-3 z-50 opacity-0 group-hover:opacity-90 transition-colors duration-300" />
