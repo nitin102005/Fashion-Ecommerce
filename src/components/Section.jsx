@@ -109,14 +109,15 @@ function Section() {
       <ShoeSection />
 
       <div className='hidden sm:block'>
-        <h1 className='text-sm sm:text-[25px] p-8 mt-[-15px]'>SHOP NOW</h1>
-       <div className='mx-4 hidden sm:flex h-[50vh] gap-6'>
+        <h1 className='text-[25px] p-8 mt-[-15px]'>SHOP NOW</h1>
+        <div className='mx-4 flex h-[50vh] gap-6'>
           <img src={poster1} alt="" />
           <img src={poster2} alt="" />
           <img src={poster3} alt="" />
           <img src={poster5} alt="" />
           <img src={poster4} alt="" />
         </div>
+
         {/* <div className='sm:hidden flex h-[11vh] mr-5 gap-1'>
           <img src={poster1} alt="" />
           <img src={poster2} alt="" />
@@ -124,7 +125,7 @@ function Section() {
           <img src={poster5} alt="" />
           <img src={poster4} alt="" />
         </div> */}
-        <div className='mx-4 hidden sm:flex gap-4 z-30 pointer-events-auto'>
+        <div className='mx-4 flex gap-4 z-30 pointer-events-auto'>
           <button type="button" className='bg-white z-30 pointer-events-auto w-[370px] relative flex items-center justify-center cursor-pointer' onClick={()=>{
             document.getElementById("mennav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
@@ -141,6 +142,7 @@ function Section() {
             document.getElementById("wnav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
         </div>
+
         {/* <div className='mx-4 flex sm:hidden gap-4 z-30 pointer-events-auto'>
           <button type="button" className='bg-white z-30 text-[7px] h-[17px] w-[220vw] right-[10px] justify-center p-0.5 relative flex cursor-pointer' onClick={()=>{
             document.getElementById("mennav")?.scrollIntoView({behavior: "smooth"})
