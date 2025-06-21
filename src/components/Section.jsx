@@ -68,7 +68,7 @@ function Section() {
     <>
       {/* // MENS SECTION */}
       <div className='mx-4 '>
-        <h1 id='mennav' className='relative right-4 p-3 text-sm sm:text-[25px] sm:p-5 mt-3 sm:mt-3'>MEN'S COLLECTION</h1>
+        <h1 id='mennav' className='relative right-4 p-3 text-[25px] sm:p-5 mt-3 sm:mt-3'>MEN'S COLLECTION</h1>
         <div className='p-5 rounded-2xl'>
 
           <Slider {...settings}>
