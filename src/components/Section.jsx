@@ -129,16 +129,16 @@ function Section() {
           <button type="button" className='bg-white z-30 pointer-events-auto w-[393px] relative flex items-center justify-center cursor-pointer' onClick={()=>{
             document.getElementById("mennav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
-          <button className='bg-black text-[#FADADD] flex items-center justify-center  relative left-[13px]  w-[388px] cursor-pointer' onClick={()=>{
+          <button className='bg-black text-[#FADADD] flex items-center justify-center  relative left-[8px]  w-[388px] cursor-pointer' onClick={()=>{
             document.getElementById("womennav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
-          <button className='bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center relative left-[29px] w-[390px] cursor-pointer' onClick={()=>{
+          <button className='bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center relative left-[17px] w-[390px] cursor-pointer' onClick={()=>{
             document.getElementById("anav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
-          <button className='bg-[#1A1A1A] text-[#ECE6DA] flex items-center justify-center relative left-[40px] w-[389px] cursor-pointer' onClick={()=>{
+          <button className='bg-[#1A1A1A] text-[#ECE6DA] flex items-center justify-center relative left-[27px] w-[389px] cursor-pointer' onClick={()=>{
             document.getElementById("snav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
-          <button className='bg-[#3E1F47] text-[#EADCF8] flex items-center justify-center relative left-[58px] w-[383px] cursor-pointer' onClick={()=>{
+          <button className='bg-[#3E1F47] text-[#EADCF8] flex items-center justify-center relative left-[39px] w-[383px] cursor-pointer' onClick={()=>{
             document.getElementById("wnav")?.scrollIntoView({behavior: "smooth"})
           }}>SHOP NOW</button>
         </div>
